@@ -1,19 +1,21 @@
 import React from "react";
 import Img from "./assets/Side-image.png";
+import { Link} from 'react-router-dom';
+
 
 function Login() {
 
     return (
 
-        <div className="grid grid-cols-2 w-screen h-screen flex ">
+        <div className="grid sm:grid-rows-1 lg:grid-cols-2">
             <div className="">
-                <img src={Img} alt="Side-Img" className="absolute lg:w-1/2 lg:h-full object-cover rounded-r-3xl" />
+                <img src={Img} alt="Side-Img" className=" hidden lg:block absolute lg:w-1/2 h-full object-cover rounded-r-3xl" />
                 <h1 className="relative mt-100 ml-80 text-3xl font-semibold text-white font-[poppins]">Walkin</h1>
             </div>
 
 
             <div className="mt-50">
-                <h1 className="font-semibold ml-51 text-blue-500 text-[24px]">Login</h1>
+                <h1 className="font-semibold ml-51 text-blue-500 text-[24px] inline-block">Login</h1>
 
                 <div className="flex flex-col items-center">
                     <input
@@ -24,7 +26,7 @@ function Login() {
                         className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-10 focus:outline-none rounded-[6px]"
                     />
                     <input
-                        type="text"
+                        type="password"
                         name=""
                         id="password"
                         placeholder="Enter your password"
@@ -36,7 +38,12 @@ function Login() {
                     <button className="bg-[#007AFF] text-white text-center cursor-pointer  w-[360px] h-[48px] mb-8  focus:outline-none rounded-[6px]">Sign in</button>
 
                     <div className="w-[360px] h-px bg-gray-300 mt-4 mb-6"></div>
-                    <p>Don't have an Account? <a href="#" className="text-[#007AFF] underline">Sign up Now</a></p>
+                    <p className="text-center">
+                        Don't have an Account?{" "}
+                        <Link to="/signup" className="text-[#007AFF] underline">
+                            Sign up Now
+                        </Link>
+                    </p>
 
                 </div>
 
