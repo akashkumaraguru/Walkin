@@ -4,40 +4,46 @@ import { Link } from "react-router-dom";
 
 const Signup: React.FC = () => {
   return (
-    <div className="grid sm:grid-rows-1 lg:grid-cols-2">
-      <div>
+    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+      
+      <div className="relative hidden lg:flex flex-col justify-center items-center bg-blue-500">
         <img
           src={Img}
           alt="Side-Img"
-          className="hidden lg:block absolute lg:w-1/2 h-full object-cover rounded-r-3xl"
+          className="absolute w-full h-full object-cover rounded-r-3xl"
         />
-        <h1 className="relative mt-100 ml-80 text-3xl font-semibold text-white font-[poppins]">
+        <h1 className="relative z-10 text-4xl font-semibold text-white font-[poppins]">
           Walkin
         </h1>
+        <div className="absolute inset-0 bg-black opacity-30 rounded-r-3xl"></div>
       </div>
 
-      <div className="mt-35">
-        <h1 className="font-semibold ml-51 text-blue-500 text-[24px] inline-block">
-          Sign up
+      {/* Right Side Signup Form (mobile + desktop) */}
+      <div className="flex flex-col justify-center items-center p-6 sm:p-12">
+        {/* Walkin heading on mobile + tablet */}
+        <h1 className="lg:hidden text-4xl font-semibold text-Black font-[poppins] mb-6">
+          Walkin
         </h1>
 
-        <div className="flex flex-col items-center">
+        <h2 className="font-semibold text-blue-500 text-2xl sm:text-3xl mb-6">
+          Sign up
+        </h2>
+
+        <div className="w-full max-w-sm">
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Enter a name"
-            className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-6 focus:outline-none rounded-[6px]"
+            placeholder="Enter your name"
+            className="bg-[#F2F2F2] p-4 w-full mb-4 focus:outline-none rounded-[6px]"
           />
-
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Enter your Mail ID"
-            className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-8 focus:outline-none rounded-[6px]"
+            className="bg-[#F2F2F2] p-4 w-full mb-4 focus:outline-none rounded-[6px]"
           />
-
           <input
             type="tel"
             name="phone"
@@ -45,32 +51,30 @@ const Signup: React.FC = () => {
             placeholder="Enter your mobile number"
             pattern="[0-9]{10}"
             maxLength={10}
-            className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-8 focus:outline-none rounded-[6px]"
+            className="bg-[#F2F2F2] p-4 w-full mb-4 focus:outline-none rounded-[6px]"
           />
-
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Enter your password"
-            className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-6 focus:outline-none rounded-[6px]"
+            className="bg-[#F2F2F2] p-4 w-full mb-4 focus:outline-none rounded-[6px]"
           />
-
           <input
             type="password"
             name="confirmPassword"
             id="confirmPassword"
-            placeholder="Re-Confirm password"
-            className="bg-[#F2F2F2] stroke-[#E5E5E5] p-4 w-[360px] h-[48px] mt-6 focus:outline-none rounded-[6px]"
+            placeholder="Re-confirm password"
+            className="bg-[#F2F2F2] p-4 w-full mb-6 focus:outline-none rounded-[6px]"
           />
 
-          <button className="bg-[#007AFF] text-white text-center cursor-pointer w-[360px] h-[48px] mb-8 focus:outline-none rounded-[6px]">
+          <button className="bg-[#007AFF] text-white w-full py-3 mb-6 focus:outline-none rounded-[6px]">
             Sign up
           </button>
 
-          <div className="w-[360px] h-px bg-gray-300 mb-4"></div>
+          <div className="w-full h-px bg-gray-300 mb-6"></div>
 
-          <p className="text-center">
+          <p className="text-center text-sm">
             Already have an Account?{" "}
             <Link to="/login" className="text-[#007AFF] underline">
               Login now
